@@ -131,6 +131,7 @@ class SphGen(nn.Module):
                 
                 focus_score = self.focus_mlp(node_feat).view(num_gen, i+1)
                 can_focus = torch.logical_and(focus_score < focus_th, z > 0)
+                #can_focus = focus_score < focus_th
                 complete_mask = (can_focus.sum(dim=-1) == 0)
 
                 if i > max(0, min_atoms-2) and torch.sum(complete_mask) > 0:

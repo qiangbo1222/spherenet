@@ -23,6 +23,6 @@ conf_optim = {'lr': 1e-5, 'weight_decay': 0.0}
 conf['model'] = conf_model
 conf['optim'] = conf_optim
 conf['verbose'] = 32
-conf['batch_size'] = 12
+conf['batch_size'] = 8
 conf['epochs'] = 100
 conf['chunk_size'] = 100

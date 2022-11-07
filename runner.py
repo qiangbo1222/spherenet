@@ -84,7 +84,7 @@ class Runner():
         # subset_idxs = subset_idxs[:10]
         dataset = QM9Gen(self.conf['model']['cutoff'], self.root_path, subset_idxs, self.atomic_num_to_type)
         sampler = torch.utils.data.distributed.DistributedSampler(dataset)
-        loader = DataLoader(dataset, batch_size=self.conf['batch_size'], sampler=sampler, num_workers=8, collate_fn=collate_mols)
+        loader = DataLoader(dataset, batch_size=self.conf['batch_size'], sampler=sampler, num_workers=0, collate_fn=collate_mols)
 
         epochs = self.conf['epochs']
         for epoch in range(epochs):

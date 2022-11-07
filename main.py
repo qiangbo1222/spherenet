@@ -6,12 +6,12 @@ import torch
 from config import conf
 from runner import Runner
 
-out_path = '/home/AI4Science/qiangb/data_from_brain++/sharefs/spherenet/checkpoints'
+out_path = '/sharefs/sharefs-syx/qb_data/sphere/checkpoints'
 if not os.path.isdir(out_path):
     os.mkdir(out_path)
 
 runner = Runner(conf, 
-                root_path='/home/AI4Science/qiangb/data_from_brain++/sharefs/3D_jtvae/GEOM_drugs_random4.sdf',
+                root_path='/sharefs/sharefs-syx/qb_data/GEOM_drugs_random4.sdf',
                 out_path=out_path)
 runner.train(split_path='geom/split.npz')
 '''
